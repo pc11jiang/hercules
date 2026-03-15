@@ -334,8 +334,7 @@ const S = `
 `;
 
 function Toast({ message, onDone }) {
-  useEffect(() => { const t = setTimeout(onDone, 2200); return () => clearTimeout(t); }, []);
-  return <div className="toast">{message}</div>;
+useEffect(() => { const t = setTimeout(onDone, 2200); return () => clearTimeout(t); }, [onDone]);  return <div className="toast">{message}</div>;
 }
 
 function LineChart({ data, color = "#c9a84c", height = 120 }) {
